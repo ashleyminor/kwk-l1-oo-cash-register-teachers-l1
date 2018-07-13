@@ -1,7 +1,6 @@
-# Code your cash register here!
 class AmazonTransaction
 
-  attr_accessor :total, :items, :discount, :lastPrice
+  attr_accessor :total, :items, :discount, :lastPrice, :quantity
 
   def initialize(discount = 0)
     @total = 0
@@ -24,7 +23,7 @@ class AmazonTransaction
       a = 100.0 - @discount
       b = a / 100.0
       @total = @total * b
-      "After the discount, the total comes to $#{@total.to_i}."
+      "After the discount, the total comes to $#{@total.to_f}."
     end
   end
 
@@ -33,3 +32,9 @@ class AmazonTransaction
   end
 
 end
+
+sample = AmazonTransaction.new(50) 
+
+sample.add_item("Beanie Babies", 14.99, 10)
+
+puts sample.apply_discount 
