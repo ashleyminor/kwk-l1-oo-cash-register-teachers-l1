@@ -23,7 +23,7 @@ class AmazonTransaction
       a = 100.0 - @discount
       b = a / 100.0
       @total = @total * b
-      "After the discount, the total comes to $#{@total.to_f}."
+      "After the discount, the total comes to $#{@total.to_i}."
     end
   end
 
